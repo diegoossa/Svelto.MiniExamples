@@ -737,14 +737,14 @@
      <Reference Include="Unity.Burst.Editor">
      <HintPath>D:\git\SveltoExamples\Example2-Unity Hybrid-Survival\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Burst">
-     <HintPath>D:\git\SveltoExamples\Example2-Unity Hybrid-Survival\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.AI.Navigation">
      <HintPath>D:\git\SveltoExamples\Example2-Unity Hybrid-Survival\Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ResourceManager">
      <HintPath>D:\git\SveltoExamples\Example2-Unity Hybrid-Survival\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst">
+     <HintPath>D:\git\SveltoExamples\Example2-Unity Hybrid-Survival\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
      </Reference>
      <Reference Include="Unity.ShaderGraph.Editor">
      <HintPath>D:\git\SveltoExamples\Example2-Unity Hybrid-Survival\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
