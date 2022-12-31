@@ -9,7 +9,9 @@
           "z": -6.829999923706055
         },
         "spawnTime": 3.0,
-        "targetType": 0
+        "targetType": 0,
+        "initialCount": 4,
+        "increaseRate": 0.3
       }
     },
     {
@@ -21,7 +23,9 @@
           "z": 13.53
         },
         "spawnTime": 3.0,
-        "targetType": 1
+        "targetType": 1,
+        "initialCount": 3,
+        "increaseRate": 0.2
       }
     },
     {
@@ -33,7 +37,9 @@
           "z": 20.219999313354493
         },
         "spawnTime": 15.0,
-        "targetType": 2
+        "targetType": 2,
+        "initialCount": 1,
+        "increaseRate": 0.25
       }
     }
   ]

@@ -82,8 +82,8 @@ namespace Svelto.ECS.Example.Survive.Enemies
                         //in my articles.
                         var EnemyAttackComponent = new EnemyAttackComponent
                         {
-                            attackDamage      = enemyAttackData[i].enemyAttackData.attackDamage, 
-                            timeBetweenAttack = enemyAttackData[i].enemyAttackData.timeBetweenAttacks
+                            attackDamage      = enemyAttackData[i].enemyAttackData.attackDamage
+                          , timeBetweenAttack = enemyAttackData[i].enemyAttackData.timeBetweenAttacks
                         };
 
                         //have we got a compatible entity previously disabled and can it be reused?

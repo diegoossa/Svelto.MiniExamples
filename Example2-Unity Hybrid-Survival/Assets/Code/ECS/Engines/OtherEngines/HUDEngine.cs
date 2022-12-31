@@ -39,16 +39,13 @@ namespace Svelto.ECS.Example.Survive.HUD
                 for (int i = 0; i < count; ++i)
                 {
                     var damageComponent = buffer[i].damageImageComponent;
-
-                    damageComponent.imageColor = Color.Lerp(damageComponent.imageColor, Color.clear
-                                                          , damageComponent.speed * UnityEngine.Time.deltaTime);
+                    damageComponent.imageColor = Color.Lerp(damageComponent.imageColor, Color.clear, damageComponent.speed * UnityEngine.Time.deltaTime);
                 }
             }
 
             while (true)
             {
                 AnimateUI();
-
                 yield return null;
             }
         }
