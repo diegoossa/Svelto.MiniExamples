@@ -1,0 +1,22 @@
+{
+    "name": "PlayerEntityLayer",
+    "rootNamespace": "",
+    "references": [
+        "Svelto.Common",
+        "Svelto.ECS",
+        "CameraLayer",
+        "UnityOOPAbstractionLayer",
+        "Utility",
+        "DamageableEntityLayer",
+        "EnemiesLayer"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

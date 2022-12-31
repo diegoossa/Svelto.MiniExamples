@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 114546494876484196}
   - component: {fileID: 114107447047363198}
   - component: {fileID: 114364468882818022}
-  - component: {fileID: 114847837711861930}
+  - component: {fileID: 961392084832341551}
   m_Layer: 10
   m_Name: ZomBear
   m_TagString: Untagged
@@ -43,7 +43,7 @@ Transform:
   - {fileID: 400002}
   - {fileID: 400004}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &9500000
 Animator:
@@ -111,10 +111,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.8
   m_Height: 1.5
   m_Direction: 1
-  m_Center: {x: 0, y: 0.8, z: 0}
+  m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -290,8 +290,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9496655af362413bb65ca481e25470c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageClip: {fileID: 8300000, guid: 1d4840678e677424b8921716c72397ea, type: 3}
-  deathClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
+  clips:
+  - {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
+  - {fileID: 8300000, guid: 1d4840678e677424b8921716c72397ea, type: 3}
 --- !u!114 &114364468882818022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 19800002}
---- !u!114 &114847837711861930
+--- !u!114 &961392084832341551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -314,9 +315,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcced41f6cb14ade8691a6d5f1ad33e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ae5aecc336a32949b179f098eceac82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reference: 0
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0

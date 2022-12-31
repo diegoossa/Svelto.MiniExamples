@@ -1,13 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{272ab51e-72fe-3806-4fb0-62df1b348d48}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svelto.ECS", "Svelto.ECS.csproj", "{8d2eb115-c2e2-3719-ca04-08d3c302a5a1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svelto.Common", "Svelto.Common.csproj", "{53ca5d34-0f9e-ae64-6d32-8d74a6f2e9d4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityOOPAbstractionLayer", "UnityOOPAbstractionLayer.csproj", "{4acf9cc6-6765-a5db-89c1-c202f09fdf16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnemiesLayer", "EnemiesLayer.csproj", "{5ab236e2-05ce-c020-ed35-80dc1c78838f}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DamageableEntityLayer", "DamageableEntityLayer.csproj", "{aeea405b-755d-b192-f746-16b655660ec3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HudLayer", "HudLayer.csproj", "{55af3f68-33bd-cdcf-d090-ab0f1db9b6d2}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svelto.Pool.Debugger", "Svelto.Pool.Debugger.csproj", "{c746b42f-36b3-0eae-2d23-d1cf4b74f48b}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility.csproj", "{61523958-85ca-4e2e-e8e7-aea8b6c3f736}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerEntityLayer", "PlayerEntityLayer.csproj", "{305cd92c-d135-5769-0803-174343592e6c}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{272ab51e-72fe-3806-4fb0-62df1b348d48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraLayer", "CameraLayer.csproj", "{244bd38c-fe73-9b87-5070-1d7b3f94730c}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{116008fc-84ba-af66-f357-c5c09c2ed75b}"
 EndProject
@@ -16,14 +30,28 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{272ab51e-72fe-3806-4fb0-62df1b348d48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{272ab51e-72fe-3806-4fb0-62df1b348d48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8d2eb115-c2e2-3719-ca04-08d3c302a5a1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8d2eb115-c2e2-3719-ca04-08d3c302a5a1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53ca5d34-0f9e-ae64-6d32-8d74a6f2e9d4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{53ca5d34-0f9e-ae64-6d32-8d74a6f2e9d4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4acf9cc6-6765-a5db-89c1-c202f09fdf16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4acf9cc6-6765-a5db-89c1-c202f09fdf16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ab236e2-05ce-c020-ed35-80dc1c78838f}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ab236e2-05ce-c020-ed35-80dc1c78838f}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{aeea405b-755d-b192-f746-16b655660ec3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{aeea405b-755d-b192-f746-16b655660ec3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55af3f68-33bd-cdcf-d090-ab0f1db9b6d2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55af3f68-33bd-cdcf-d090-ab0f1db9b6d2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{c746b42f-36b3-0eae-2d23-d1cf4b74f48b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{c746b42f-36b3-0eae-2d23-d1cf4b74f48b}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61523958-85ca-4e2e-e8e7-aea8b6c3f736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61523958-85ca-4e2e-e8e7-aea8b6c3f736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{305cd92c-d135-5769-0803-174343592e6c}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{305cd92c-d135-5769-0803-174343592e6c}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{272ab51e-72fe-3806-4fb0-62df1b348d48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{272ab51e-72fe-3806-4fb0-62df1b348d48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{244bd38c-fe73-9b87-5070-1d7b3f94730c}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{244bd38c-fe73-9b87-5070-1d7b3f94730c}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{116008fc-84ba-af66-f357-c5c09c2ed75b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{116008fc-84ba-af66-f357-c5c09c2ed75b}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection

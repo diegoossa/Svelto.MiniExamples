@@ -261,7 +261,7 @@ ModelImporter:
       name: ZombunnyMaterial
     second: {fileID: 2100000, guid: 90309a9ae07af7a4baf27031c594f369, type: 2}
   materials:
-    materialImportMode: 1
+    materialImportMode: 0
     materialName: 1
     materialSearch: 1
     materialLocation: 0
