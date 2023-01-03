@@ -49,9 +49,11 @@
      <Compile Include="Assets\Code\ECS\HudLayer\Entities\GUIComponentInterfaces.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Entities\DamageHUDImplementor.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\HUDEnginesNames.cs" />
+     <Compile Include="Assets\Code\ECS\HudLayer\Entities\EnemyCountImplementor.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\HUDAnimations.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Entities\HUDEntityDescriptorHolder.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Entities\HUDEntityDescriptor.cs" />
+     <Compile Include="Assets\Code\ECS\HudLayer\Engines\UpdateEnemyCountEngine.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Entities\HUDEntityViewComponent.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Engines\HUDEngines.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\HudLayerContext.cs" />

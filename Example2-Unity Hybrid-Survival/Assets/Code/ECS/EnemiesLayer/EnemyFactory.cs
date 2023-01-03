@@ -86,9 +86,9 @@ namespace Svelto.ECS.Example.Survive
             ValueIndex gameObjectIndex = build;
             var enemyGO = _gameObjectResourceManager[gameObjectIndex];
 
-            var referencHolder = enemyGO.GetComponent<EntityReferenceHolder>();
+            var referenceHolder = enemyGO.GetComponent<EntityReferenceHolder>();
 
-            InitEntity(referencHolder, enemyGO, gameObjectIndex);
+            InitEntity(referenceHolder, enemyGO, gameObjectIndex);
         }
 
         readonly IEntityFactory _entityFactory;
