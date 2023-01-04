@@ -13,7 +13,7 @@ namespace Svelto.ECS.Example.Survive.HUD
             //hud engines
             var hudEngine = new HUDEngine();
             var scoreEngine = new UpdateScoreEngine();
-            var enemyCountEngine = new UpdateEnemyCountEngine();
+            var enemyCountEngine = new UpdateEnemyWaveHUDEngine();
             var restartGameOnPlayerDeath = new RestartGameOnPlayerDeathEngine();
 
             enginesRoot.AddEngine(hudEngine);

@@ -1,10 +1,13 @@
 using System.Collections;
 using Svelto.ECS.Example.Survive.Enemies;
+using UnityEngine;
 
 namespace Svelto.ECS.Example.Survive.HUD
 {
-    public class UpdateEnemyCountEngine : IQueryingEntitiesEngine, IStepEngine, IReactOnAddAndRemoveEx<EnemyComponent>
+    public class UpdateEnemyWaveHUDEngine : IQueryingEntitiesEngine, IStepEngine, IReactOnAddAndRemoveEx<EnemyComponent>
     {
+        private const int SECONDS_BETWEEN_WAVES = 2;
+        
         public EntitiesDB entitiesDB { set; private get; }
         public string name => nameof(EnemyMovementEngine);
 
@@ -45,13 +48,22 @@ namespace Svelto.ECS.Example.Survive.HUD
 
             while (true)
             {
-                CheckEnemyCount();
-                yield return null;
-            }
-
-            void CheckEnemyCount()
-            {
                 hudEntityView.enemyCountComponent.enemyCount = _enemyCount;
+
+                // Prepare Next Wave
+                if (_enemyCount == 0)
+                {
+                    // Show Next Wave Message
+                    hudEntityView.NextWaveMessageComponent.visible = true;
+                    
+                    var waitForSecondsEnumerator = new WaitForSecondsEnumerator(SECONDS_BETWEEN_WAVES);
+                    while (waitForSecondsEnumerator.MoveNext())
+                        yield return null;
+                    
+                    // Hide Next Wave Message
+                    hudEntityView.NextWaveMessageComponent.visible = false;
+                }
+                yield return null;
             }
         }
 

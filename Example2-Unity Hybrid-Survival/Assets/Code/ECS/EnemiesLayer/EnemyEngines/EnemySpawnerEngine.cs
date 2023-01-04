@@ -30,11 +30,11 @@ namespace Svelto.ECS.Example.Survive.Enemies
 
         IEnumerator IntervaledTick()
         {
-            var enemiestoSpawnTask = PreallocationTask();
-            while (enemiestoSpawnTask.IsCompleted == false)
+            var enemiesToSpawnTask = PreallocationTask();
+            while (enemiesToSpawnTask.IsCompleted == false)
                 yield return null;
 
-            var (enemiestoSpawn, enemyAttackData, spawningTimes) = enemiestoSpawnTask.Result;
+            var (enemiesToSpawn, enemyAttackData, spawningTimes) = enemiesToSpawnTask.Result;
 
             while (true)
             {
@@ -43,7 +43,7 @@ namespace Svelto.ECS.Example.Survive.Enemies
                 {
                     if (spawningTimes[i] <= 0.0f)
                     {
-                        var spawnData = enemiestoSpawn[i];
+                        var spawnData = enemiesToSpawn[i];
 
                         var task = _enemyFactory.Fetch(spawnData.enemySpawnData, enemyAttackData[i]);
                         while (task.GetAwaiter().IsCompleted == false)
@@ -71,47 +71,43 @@ namespace Svelto.ECS.Example.Survive.Enemies
                 //Also note that I am loading the data only once per application run, outside the 
                 //main loop. You can always exploit this pattern when you know that the data you need
                 //to use will never change            
-                var enemiestoSpawn = await ReadEnemySpawningDataServiceRequest();
+                var enemiesToSpawn = await ReadEnemySpawningDataServiceRequest();
                 var enemyAttackData = await ReadEnemyAttackDataServiceRequest();
 
-                var spawningTimes = new float[enemiestoSpawn.Length];
+                var spawningTimes = new float[enemiesToSpawn.Length];
 
                 //prebuild gameobjects to avoid spikes. For each enemy type
                 for (var i = spawningTimes.Length - 1; i >= 0; --i)
                 {
-                    var spawnData = enemiestoSpawn[i];
+                    var spawnData = enemiesToSpawn[i];
 
                     //preallocate the max number of enemies
                     await _enemyFactory.Preallocate(spawnData.enemySpawnData, NUMBER_OF_ENEMIES_TO_SPAWN);
 
-                    spawningTimes[i] = enemiestoSpawn[i].enemySpawnData.spawnTime;
+                    spawningTimes[i] = enemiesToSpawn[i].enemySpawnData.spawnTime;
                 }
 
-                return (enemiestoSpawn, enemyAttackData, spawningTimes);
+                return (enemiesToSpawn, enemyAttackData, spawningTimes);
             }
         }
 
         static async Task<JSonEnemySpawnData[]> ReadEnemySpawningDataServiceRequest()
         {
             var json = await Addressables.LoadAssetAsync<TextAsset>("EnemySpawningData").Task;
-
-            JSonEnemySpawnData[] enemiestoSpawn = JsonHelper.getJsonArray<JSonEnemySpawnData>(json.text);
-
-            return enemiestoSpawn;
+            var enemiesToSpawn = JsonHelper.getJsonArray<JSonEnemySpawnData>(json.text);
+            return enemiesToSpawn;
         }
 
         static async Task<JSonEnemyAttackData[]> ReadEnemyAttackDataServiceRequest()
         {
             var json = await Addressables.LoadAssetAsync<TextAsset>("EnemyAttackData").Task;
-
             var enemiesAttackData = JsonHelper.getJsonArray<JSonEnemyAttackData>(json.text);
-
             return enemiesAttackData;
         }
 
-        readonly EnemyFactory _enemyFactory;
+        private readonly EnemyFactory _enemyFactory;
 
-        int _numberOfEnemyToSpawn;
-        IEnumerator _intervaledTick;
+        private int _numberOfEnemyToSpawn;
+        private IEnumerator _intervaledTick;
     }
 }

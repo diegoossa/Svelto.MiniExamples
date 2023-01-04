@@ -19,6 +19,6 @@ namespace Svelto.ECS.Example.Survive
         public float            spawnTime;
         public PlayerTargetType targetType;
         public int initialCount;
-        public float increaseRate;
+        public float increment;
     }
 }

@@ -11,7 +11,7 @@
         "spawnTime": 3.0,
         "targetType": 0,
         "initialCount": 2,
-        "increaseRate": 0.3
+        "increment": 0.75
       }
     },
     {
@@ -25,7 +25,7 @@
         "spawnTime": 3.0,
         "targetType": 1,
         "initialCount": 1,
-        "increaseRate": 0.2
+        "increment": 0.5
       }
     },
     {
@@ -38,8 +38,8 @@
         },
         "spawnTime": 15.0,
         "targetType": 2,
-        "initialCount": 1,
-        "increaseRate": 0.25
+        "initialCount": 0,
+        "increment": 0.5
       }
     }
   ]

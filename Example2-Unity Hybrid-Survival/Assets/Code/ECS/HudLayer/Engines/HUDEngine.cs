@@ -50,7 +50,6 @@ namespace Svelto.ECS.Example.Survive.HUD
             while (true)
             {
                 AnimateUI();
-
                 yield return null;
             }
         }

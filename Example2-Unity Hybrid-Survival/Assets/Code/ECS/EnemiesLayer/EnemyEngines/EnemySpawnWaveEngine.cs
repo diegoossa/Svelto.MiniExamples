@@ -7,8 +7,8 @@ namespace Svelto.ECS.Example.Survive.Enemies
 {
     public class EnemySpawnWaveEngine : IQueryingEntitiesEngine, IStepEngine, IReactOnRemoveEx<EnemyComponent>
     {
-        const int SECONDS_BETWEEN_WAVES = 2;
-        const int NUMBER_OF_ENEMIES_TO_PREALLOCATE = 12;
+        private const int SECONDS_BETWEEN_WAVES = 2;
+        private const int NUMBER_OF_ENEMIES_TO_PREALLOCATE = 12;
 
         public EnemySpawnWaveEngine(EnemyFactory enemyFactory)
         {
@@ -35,7 +35,6 @@ namespace Svelto.ECS.Example.Survive.Enemies
             if (groupID.FoundIn(EnemyDeadGroup.Groups))
             {
                 _aliveEnemies -= (int) rangeOfEntities.end - (int) rangeOfEntities.start;
-                Debug.Log($"REMAINING ENEMIES = {_aliveEnemies}");
             }
         }
 
@@ -49,9 +48,10 @@ namespace Svelto.ECS.Example.Survive.Enemies
 
             while (true)
             {
+                // Next Wave
                 if (_aliveEnemies <= 0)
                 {
-                    Debug.Log($"NEW WAVE >> {_currentWave}");
+                    _currentWave++;
                     
                     var waitForSecondsEnumerator = new WaitForSecondsEnumerator(SECONDS_BETWEEN_WAVES);
                     while (waitForSecondsEnumerator.MoveNext())
@@ -60,8 +60,8 @@ namespace Svelto.ECS.Example.Survive.Enemies
                     for (var i = 0; i < enemiesToSpawn.Length; i++)
                     {
                         var spawnData = enemiesToSpawn[i];
-                        var spawnCount = (int) (spawnData.enemySpawnData.initialCount + _currentWave *
-                            spawnData.enemySpawnData.increaseRate * spawnData.enemySpawnData.initialCount);
+                        var spawnCount = (int) (spawnData.enemySpawnData.initialCount +
+                                                spawnData.enemySpawnData.increment * (_currentWave - 1));
 
                         for (var j = 0; j < spawnCount; j++)
                         {
@@ -71,9 +71,8 @@ namespace Svelto.ECS.Example.Survive.Enemies
                             _aliveEnemies++;
                         }
                     }
-                    _currentWave++;
                 }
-                
+
                 yield return null;
             }
 

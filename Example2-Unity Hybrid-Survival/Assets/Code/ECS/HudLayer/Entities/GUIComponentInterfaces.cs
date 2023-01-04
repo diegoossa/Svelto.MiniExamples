@@ -22,6 +22,11 @@ namespace Svelto.ECS.Example.Survive.HUD
     
     public interface IEnemyCountComponent
     {
-        int enemyCount { set; get; }
+        int enemyCount { set; }
+    }
+    
+    public interface INextWaveMessageComponent
+    {
+        bool visible { set; }
     }
 }

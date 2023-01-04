@@ -53,13 +53,14 @@
      <Compile Include="Assets\Code\ECS\HudLayer\HUDAnimations.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Entities\HUDEntityDescriptorHolder.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Entities\HUDEntityDescriptor.cs" />
-     <Compile Include="Assets\Code\ECS\HudLayer\Engines\UpdateEnemyCountEngine.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Entities\HUDEntityViewComponent.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Engines\HUDEngines.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\HudLayerContext.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Engines\HUDEngine.cs" />
+     <Compile Include="Assets\Code\ECS\HudLayer\Entities\NextWaveMessageImplementor.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Engines\RestartGameOnPlayerDeathEngine.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Engines\UpdateScoreEngine.cs" />
+     <Compile Include="Assets\Code\ECS\HudLayer\Engines\UpdateEnemyWaveHUDEngine.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Entities\ScoreManagerImplementor.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Entities\HealthSliderImplementor.cs" />
      <None Include="Assets\Code\ECS\HudLayer\HudLayer.asmdef" />
