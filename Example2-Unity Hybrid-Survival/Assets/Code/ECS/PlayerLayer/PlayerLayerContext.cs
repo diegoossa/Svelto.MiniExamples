@@ -19,7 +19,7 @@ namespace Svelto.ECS.Example.Survive.Player
             var playerAnimationEngine = new PlayerAnimationEngine();
             var playerDeathEngine = new PlayerDeathEngine(entityFunctions);
             var playerInputEngine = new PlayerInputEngine();
-            var PlayerDamagedEngine = new PlayerDamagedEngine();
+            var playerDamagedEngine = new PlayerDamagedEngine();
 
 //Player engines
             enginesRoot.AddEngine(playerInputEngine);
@@ -27,7 +27,7 @@ namespace Svelto.ECS.Example.Survive.Player
             enginesRoot.AddEngine(playerAnimationEngine);
             enginesRoot.AddEngine(playerShootingEngine);
             enginesRoot.AddEngine(playerDeathEngine);
-            enginesRoot.AddEngine(PlayerDamagedEngine);
+            enginesRoot.AddEngine(playerDamagedEngine);
     
             unorderedEngines.Add(playerInputEngine);
             unorderedEngines.Add(playerMovementEngine);
@@ -35,7 +35,7 @@ namespace Svelto.ECS.Example.Survive.Player
 
             orderedEngines.Add(playerShootingEngine);
             orderedEngines.Add(playerDeathEngine);
-            orderedEngines.Add(PlayerDamagedEngine);
+            orderedEngines.Add(playerDamagedEngine);
         }
     }
 }

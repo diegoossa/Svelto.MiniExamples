@@ -12,7 +12,7 @@ namespace Svelto.ECS.Example.Survive.HUD
             set
             {
                 _score     = value;
-                _text.text = "score: " + _score;
+                _text.text = "SCORE: " + _score;
             }
         }
 

@@ -48,20 +48,20 @@ namespace Svelto.ECS.Example.Survive.HUD
 
             while (true)
             {
-                hudEntityView.enemyCountComponent.enemyCount = _enemyCount;
+                hudEntityView.enemyCounterComponent.enemyCount = _enemyCount;
 
                 // Prepare Next Wave
                 if (_enemyCount == 0)
                 {
                     // Show Next Wave Message
-                    hudEntityView.NextWaveMessageComponent.visible = true;
+                    hudEntityView.nextWaveMessageComponent.visible = true;
                     
                     var waitForSecondsEnumerator = new WaitForSecondsEnumerator(SECONDS_BETWEEN_WAVES);
                     while (waitForSecondsEnumerator.MoveNext())
                         yield return null;
                     
                     // Hide Next Wave Message
-                    hudEntityView.NextWaveMessageComponent.visible = false;
+                    hudEntityView.nextWaveMessageComponent.visible = false;
                 }
                 yield return null;
             }

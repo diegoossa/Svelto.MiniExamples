@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerEntityLayer", "Player
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{272ab51e-72fe-3806-4fb0-62df1b348d48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PickupLayer", "PickupLayer.csproj", "{b4bfc790-ce87-54c4-9b1b-900f64f0f5c7}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraLayer", "CameraLayer.csproj", "{244bd38c-fe73-9b87-5070-1d7b3f94730c}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{116008fc-84ba-af66-f357-c5c09c2ed75b}"
@@ -50,6 +52,8 @@ Global
 		{305cd92c-d135-5769-0803-174343592e6c}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{272ab51e-72fe-3806-4fb0-62df1b348d48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{272ab51e-72fe-3806-4fb0-62df1b348d48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{b4bfc790-ce87-54c4-9b1b-900f64f0f5c7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{b4bfc790-ce87-54c4-9b1b-900f64f0f5c7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{244bd38c-fe73-9b87-5070-1d7b3f94730c}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{244bd38c-fe73-9b87-5070-1d7b3f94730c}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{116008fc-84ba-af66-f357-c5c09c2ed75b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

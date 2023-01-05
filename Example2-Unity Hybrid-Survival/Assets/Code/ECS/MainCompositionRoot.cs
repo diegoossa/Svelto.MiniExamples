@@ -7,6 +7,7 @@ using Svelto.ECS.Example.Survive.Enemies;
 using Svelto.ECS.Example.Survive.Player;
 using Svelto.ECS.Example.Survive.HUD;
 using Svelto.ECS.Example.Survive.OOPLayer;
+using Svelto.ECS.Example.Survive.Pickup;
 using Svelto.ECS.Extensions.Unity;
 using Svelto.ECS.Schedulers;
 using UnityEngine;
@@ -123,6 +124,7 @@ namespace Svelto.ECS.Example.Survive
                 unorderedEngines, orderedEngines, new WaitForSubmissionEnumerator(entitySubmissionScheduler),
                 _enginesRoot, gameObjectResourceManager);
             HudLayerContext.Setup(orderedEngines, _enginesRoot);
+            PickupLayerContext.Setup(orderedEngines, unorderedEngines, _enginesRoot);
 
 //group engines for order of execution. Ordering and Ticking is 100% user responsibility. This is just one of the possible way to achieve the result desired
             orderedEngines.Add(new SurvivalUnsortedEnginesGroup(unorderedEngines));
@@ -130,11 +132,11 @@ namespace Svelto.ECS.Example.Survive
             var sortedEnginesGroup = new SortedEnginesGroup(orderedEngines);
 
 //PlayerSpawner is not an engine, it could have been, but since it doesn't have an update, it's better to be a factory
-            var playerSpanwer = new PlayerFactory(gameObjectResourceManager, entityFactory);
+            var playerSpawner = new PlayerFactory(gameObjectResourceManager, entityFactory);
 
             BuildGUIEntitiesFromScene(contextHolder, entityFactory);
 
-            StartMainLoop(sortedEnginesGroup, entitySubmissionScheduler, playerSpanwer);
+            StartMainLoop(sortedEnginesGroup, entitySubmissionScheduler, playerSpawner);
 
 //Attach Svelto Inspector: for more info https://github.com/sebas77/svelto-ecs-inspector-unity
 #if DEBUG
@@ -144,28 +146,28 @@ namespace Svelto.ECS.Example.Survive
 
         //Svelto ECS doesn't provide a ticking system, the user is responsible for it
         async void StartMainLoop(SortedEnginesGroup enginesToTick,
-            SimpleEntitiesSubmissionScheduler unityEntitySubmissionScheduler, PlayerFactory playerSpanwer)
+            SimpleEntitiesSubmissionScheduler unityEntitySubmissionScheduler, PlayerFactory playerSpawner)
         {
-            await playerSpanwer.StartSpawningPlayerTask();
+            await playerSpawner.StartSpawningPlayerTask();
 
             RunSveltoUpdateInTheEarlyUpdate(enginesToTick, unityEntitySubmissionScheduler);
         }
 
         void BuildGUIEntitiesFromScene(UnityContext contextHolder, IEntityFactory entityFactory)
         {
-            /// An EntityDescriptorHolder is a special Svelto.ECS hybrid class dedicated to the unity platform.
-            /// Once attached to a gameobject it automatically retrieves implementors from the hierarchy.
-            /// This pattern is usually useful for guis where complex hierarchy of gameobjects are necessary, but
-            /// otherwise you should always create entities in factories. 
-            /// The gui of this project is ultra simple and is all managed by one entity only. This way won't do
-            /// for a complex GUI.
-            /// Note that creating an entity to manage a complex gui like this, is OK only for such a simple scenario
-            /// otherwise a widget-like design should be adopted.
-            ///
-            /// UPDATE: NOTE -> SveltoGUIHelper is now deprecated. Managing GUIs with Entities is not recommended
-            /// it's best to use a proper GUI framework and sync models with entity components in sync engines
-            /// Building from EntityDescriptorHolders is also sort of unnecessary too (as in there could be better
-            /// ways to achieve the same result)
+            // An EntityDescriptorHolder is a special Svelto.ECS hybrid class dedicated to the unity platform.
+            // Once attached to a gameobject it automatically retrieves implementors from the hierarchy.
+            // This pattern is usually useful for guis where complex hierarchy of gameobjects are necessary, but
+            // otherwise you should always create entities in factories. 
+            // The gui of this project is ultra simple and is all managed by one entity only. This way won't do
+            // for a complex GUI.
+            // Note that creating an entity to manage a complex gui like this, is OK only for such a simple scenario
+            // otherwise a widget-like design should be adopted.
+            //
+            // UPDATE: NOTE -> SveltoGUIHelper is now deprecated. Managing GUIs with Entities is not recommended
+            // it's best to use a proper GUI framework and sync models with entity components in sync engines
+            // Building from EntityDescriptorHolders is also sort of unnecessary too (as in there could be better
+            // ways to achieve the same result)
             SveltoGUIHelper.Create<HUDEntityDescriptorHolder>(
                 ECSGroups.HUD, contextHolder.transform, entityFactory, true);
         }

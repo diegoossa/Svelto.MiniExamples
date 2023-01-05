@@ -1,4 +1,3 @@
-using System;
 using Svelto.Common;
 using Svelto.ECS.Example.Survive.Damage;
 using Svelto.ECS.Example.Survive.OOPLayer;

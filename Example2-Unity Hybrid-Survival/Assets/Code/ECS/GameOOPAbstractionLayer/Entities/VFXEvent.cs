@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Svelto.ECS.Example.Survive.Enemies
+namespace Svelto.ECS.Example.Survive.OOPLayer
 {
     public struct VFXEvent
     {

@@ -1,6 +1,4 @@
-﻿using Svelto.ECS.Example.Survive.Enemies;
-
-namespace Svelto.ECS.Example.Survive.OOPLayer
+﻿namespace Svelto.ECS.Example.Survive.OOPLayer
 {
     public class SyncVFXEntitiesToObjects: IQueryingEntitiesEngine, IStepEngine
     {
