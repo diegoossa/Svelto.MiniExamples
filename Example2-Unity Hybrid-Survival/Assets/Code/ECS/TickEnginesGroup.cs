@@ -3,6 +3,7 @@ using Svelto.DataStructures;
 using Svelto.ECS.Example.Survive.Damage;
 using Svelto.ECS.Example.Survive.HUD;
 using Svelto.ECS.Example.Survive.OOPLayer;
+using Svelto.ECS.Example.Survive.Pickup;
 using Svelto.ECS.Example.Survive.Player;
 using Svelto.ECS.Example.Survive.Player.Gun;
 using Svelto.ECS.Schedulers;
@@ -38,6 +39,7 @@ namespace Svelto.ECS.Example.Survive
                 nameof(PlayerEnginesNames.PlayerDamagedEngine),
                 nameof(PlayerEnginesNames.PlayerDeathEngine),
                 nameof(HUDEnginesNames.HUDEngines),
+                nameof(PickupEnginesNames.CollectPickupEngine),
                 //SubmissionEngine awkward note: enemies spawned on this frame won't synchronise to the gameobjects
                 //if they are not submitted before PostSveltoUpdate is called. A solution to the problem could be to
                 //react on add so the synchronization happens during the submission, but this would mean to have two

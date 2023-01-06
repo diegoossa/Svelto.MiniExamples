@@ -48,6 +48,7 @@
      <Compile Include="Assets\Code\ECS\EnemiesLayer\EnemyEngines\EnemySpawnEffectOnDamageEngine.cs" />
      <Compile Include="Assets\Code\ECS\EnemiesLayer\Entities\EnemyEntityDescriptor.cs" />
      <Compile Include="Assets\Code\ECS\EnemiesLayer\EnemyEngines\EnemyDeathEngine.cs" />
+     <Compile Include="Assets\Code\ECS\EnemiesLayer\EnemyEngines\EnemyWaveSpawnerEngine.cs" />
      <Compile Include="Assets\Code\ECS\EnemiesLayer\AudioType.cs" />
      <Compile Include="Assets\Code\ECS\EnemiesLayer\Entities\EnemyAttackComponent.cs" />
      <Compile Include="Assets\Code\ECS\EnemiesLayer\EnemyLayerContext.cs" />
@@ -59,7 +60,6 @@
      <Compile Include="Assets\Code\ECS\EnemiesLayer\EnemyGroups.cs" />
      <Compile Include="Assets\Code\ECS\EnemiesLayer\EnemyEngines\EnemySpawnerEngine.cs" />
      <Compile Include="Assets\Code\ECS\EnemiesLayer\EnemyEngines\EnemyMovementEngine.cs" />
-     <Compile Include="Assets\Code\ECS\EnemiesLayer\EnemyEngines\EnemySpawnWaveEngine.cs" />
      <Compile Include="Assets\Code\ECS\EnemiesLayer\EnemyFactory.cs" />
      <None Include="Assets\Code\ECS\EnemiesLayer\EnemiesLayer.asmdef" />
      <Folder Include="Assets\Code\ECS\EnemiesLayer\EnemyEngines" />

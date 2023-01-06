@@ -45,6 +45,10 @@ namespace Svelto.ECS.Example.Survive.OOPLayer
             enginesRoot.AddEngine(syncEngine);
             syncEntitiesToObjectsGroup.Add(syncEngine);
             
+            syncEngine = new SyncEntitiesRotationToObjects(gameObjectResourceManager);
+            enginesRoot.AddEngine(syncEngine);
+            syncEntitiesToObjectsGroup.Add(syncEngine);
+            
             syncEngine = new SyncPhysicEntitiesToObjects(gameObjectResourceManager);
             enginesRoot.AddEngine(syncEngine);
             syncEntitiesToObjectsGroup.Add(syncEngine);

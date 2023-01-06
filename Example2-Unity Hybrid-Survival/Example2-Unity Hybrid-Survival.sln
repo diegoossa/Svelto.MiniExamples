@@ -17,11 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svelto.Pool.Debugger", "Sve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility.csproj", "{61523958-85ca-4e2e-e8e7-aea8b6c3f736}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PickupLayer", "PickupLayer.csproj", "{b4bfc790-ce87-54c4-9b1b-900f64f0f5c7}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerEntityLayer", "PlayerEntityLayer.csproj", "{305cd92c-d135-5769-0803-174343592e6c}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{272ab51e-72fe-3806-4fb0-62df1b348d48}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PickupLayer", "PickupLayer.csproj", "{b4bfc790-ce87-54c4-9b1b-900f64f0f5c7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraLayer", "CameraLayer.csproj", "{244bd38c-fe73-9b87-5070-1d7b3f94730c}"
 EndProject
@@ -48,12 +48,12 @@ Global
 		{c746b42f-36b3-0eae-2d23-d1cf4b74f48b}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61523958-85ca-4e2e-e8e7-aea8b6c3f736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{61523958-85ca-4e2e-e8e7-aea8b6c3f736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{b4bfc790-ce87-54c4-9b1b-900f64f0f5c7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{b4bfc790-ce87-54c4-9b1b-900f64f0f5c7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{305cd92c-d135-5769-0803-174343592e6c}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{305cd92c-d135-5769-0803-174343592e6c}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{272ab51e-72fe-3806-4fb0-62df1b348d48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{272ab51e-72fe-3806-4fb0-62df1b348d48}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{b4bfc790-ce87-54c4-9b1b-900f64f0f5c7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{b4bfc790-ce87-54c4-9b1b-900f64f0f5c7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{244bd38c-fe73-9b87-5070-1d7b3f94730c}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{244bd38c-fe73-9b87-5070-1d7b3f94730c}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{116008fc-84ba-af66-f357-c5c09c2ed75b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

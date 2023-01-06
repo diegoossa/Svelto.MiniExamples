@@ -58,7 +58,6 @@
      <Folder Include="Assets\AddressableAssetsData\Windows" />
      <Folder Include="Assets\Textures" />
      <None Include="Assets\Fonts\LuckiestGuy\LICENSE.txt" />
-     <Folder Include="Assets\Prefabs\Collectables" />
      <None Include="Assets\Fonts\Russo_One\OFL.txt" />
      <Folder Include="Assets\Shaders" />
      <Folder Include="Assets\Models\Collectables\Ammo" />

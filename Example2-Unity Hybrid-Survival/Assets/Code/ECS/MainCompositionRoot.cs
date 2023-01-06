@@ -103,6 +103,7 @@ namespace Svelto.ECS.Example.Survive
 //wrap non testable unity static classes, so that can be mocked if needed (or implementation can change in general, without changing the interface).
             IRayCaster rayCaster = new RayCaster();
             ITime time = new Time();
+            INavMeshUtils navMeshUtils = new NavMeshUtils();
 //GameObjectFactory allows to create GameObjects without using the Static method GameObject.Instantiate.
 //While it seems a complication it's important to keep the engines testable and not coupled with hard
 //dependencies
@@ -124,7 +125,7 @@ namespace Svelto.ECS.Example.Survive
                 unorderedEngines, orderedEngines, new WaitForSubmissionEnumerator(entitySubmissionScheduler),
                 _enginesRoot, gameObjectResourceManager);
             HudLayerContext.Setup(orderedEngines, _enginesRoot);
-            PickupLayerContext.Setup(orderedEngines, unorderedEngines, _enginesRoot);
+            PickupLayerContext.Setup(entityFactory, time, navMeshUtils, orderedEngines, unorderedEngines, _enginesRoot, gameObjectResourceManager);
 
 //group engines for order of execution. Ordering and Ticking is 100% user responsibility. This is just one of the possible way to achieve the result desired
             orderedEngines.Add(new SurvivalUnsortedEnginesGroup(unorderedEngines));

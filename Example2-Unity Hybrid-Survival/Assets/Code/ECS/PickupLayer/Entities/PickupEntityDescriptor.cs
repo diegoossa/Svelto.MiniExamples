@@ -3,7 +3,12 @@
 namespace Svelto.ECS.Example.Survive.Pickup
 {
     public class PickupEntityDescriptor : 
-        GenericEntityDescriptor<PositionComponent, PickupComponent, GameObjectEntityComponent, CollisionComponent, VFXComponent>
-    {
-    }
+        GenericEntityDescriptor<
+            PositionComponent, 
+            RotationComponent,
+            PickupComponent, 
+            GameObjectEntityComponent, 
+            CollisionComponent, 
+            VFXComponent>
+    { }
 }

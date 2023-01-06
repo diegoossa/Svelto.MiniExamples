@@ -2,8 +2,8 @@
 {
     public enum EnemyEnginesNames
     {
-        EnemyAttackEngine
-      , EnemyDeathEngine
-      , EnemySpawnEffectOnDamage
+        EnemyAttackEngine,
+        EnemyDeathEngine,
+        EnemySpawnEffectOnDamage
     }
 }

@@ -5,12 +5,12 @@ using UnityEngine.AddressableAssets;
 
 namespace Svelto.ECS.Example.Survive.Enemies
 {
-    public class EnemySpawnWaveEngine : IQueryingEntitiesEngine, IStepEngine, IReactOnRemoveEx<EnemyComponent>
+    public class EnemyWaveSpawnerEngine : IQueryingEntitiesEngine, IStepEngine, IReactOnRemoveEx<EnemyComponent>
     {
         private const int SECONDS_BETWEEN_WAVES = 2;
         private const int NUMBER_OF_ENEMIES_TO_PREALLOCATE = 12;
 
-        public EnemySpawnWaveEngine(EnemyFactory enemyFactory)
+        public EnemyWaveSpawnerEngine(EnemyFactory enemyFactory)
         {
             _enemyFactory = enemyFactory;
         }
@@ -27,7 +27,7 @@ namespace Svelto.ECS.Example.Survive.Enemies
             _intervaledTick.MoveNext();
         }
 
-        public string name => nameof(EnemySpawnWaveEngine);
+        public string name => nameof(EnemyWaveSpawnerEngine);
 
         public void Remove((uint start, uint end) rangeOfEntities, in EntityCollection<EnemyComponent> entities,
             ExclusiveGroupStruct groupID)

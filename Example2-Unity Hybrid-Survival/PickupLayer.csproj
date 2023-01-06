@@ -45,13 +45,15 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.2.1f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Code\ECS\PickupLayer\Engines\RotatePickupEngine.cs" />
+     <Compile Include="Assets\Code\ECS\PickupLayer\Engines\CollectPickupEngine.cs" />
+     <Compile Include="Assets\Code\ECS\PickupLayer\Engines\PickupSpawnerEngine.cs" />
      <Compile Include="Assets\Code\ECS\PickupLayer\Entities\PickupComponent.cs" />
      <Compile Include="Assets\Code\ECS\PickupLayer\Entities\PickupEntityDescriptor.cs" />
      <Compile Include="Assets\Code\ECS\PickupLayer\PickupGroups.cs" />
      <Compile Include="Assets\Code\ECS\PickupLayer\PickupLayerContext.cs" />
      <Compile Include="Assets\Code\ECS\PickupLayer\PickupFactory.cs" />
      <Compile Include="Assets\Code\ECS\PickupLayer\PickupEnginesNames.cs" />
-     <Compile Include="Assets\Code\ECS\PickupLayer\Engines\PickupAmmoEngine.cs" />
      <Folder Include="Assets\Code\ECS\PickupLayer\Entities" />
      <Folder Include="Assets\Code\ECS\PickupLayer" />
      <Folder Include="Assets\Code\ECS\PickupLayer\Engines" />

@@ -15,16 +15,16 @@ namespace Svelto.ECS.Example.Survive.Pickup
 
         public async Task Preallocate(int numberOfEnemiesToSpawn)
         {
-            // TODO: Create JsonSpawnData if we have more pickup types
+            // TODO: Create JsonSpawnData if we have more pickup types and ids
             await _gameObjectResourceManager.Preallocate("AmmoPickup", 3, numberOfEnemiesToSpawn);
         }
 
-        public async Task Fetch()
+        public async Task Fetch(Vector3 position)
         {
             void InitEntity(EntityReferenceHolder entityReferenceHolder, GameObject enemyGo, ValueIndex valueIndex)
             {
                 EntityInitializer initializer = _entityFactory.BuildEntity<PickupEntityDescriptor>(
-                    new EGID(_pickupsCreated++, Ammo.BuildGroup));
+                    new EGID(_pickupsCreated++, Pickup.BuildGroup));
 
                 entityReferenceHolder.reference = initializer.reference.ToULong();
 
@@ -35,17 +35,15 @@ namespace Svelto.ECS.Example.Survive.Pickup
                         layer = GAME_LAYERS.PICKUP_LAYER
                     });
                 initializer.Init(
-                    new PositionComponent()
+                    new PositionComponent
                     {
-                        // TODO: Random
-                        position = Vector3.zero
+                        position = position
                     });
 
                 enemyGo.SetActive(true);
             }
 
             var build = await _gameObjectResourceManager.Reuse("AmmoPickup", 3);
-
             ValueIndex gameObjectIndex = build;
             var pickupGO = _gameObjectResourceManager[gameObjectIndex];
             var referenceHolder = pickupGO.GetComponent<EntityReferenceHolder>();

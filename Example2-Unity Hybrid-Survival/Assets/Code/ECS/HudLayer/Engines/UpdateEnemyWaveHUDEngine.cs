@@ -1,6 +1,5 @@
 using System.Collections;
 using Svelto.ECS.Example.Survive.Enemies;
-using UnityEngine;
 
 namespace Svelto.ECS.Example.Survive.HUD
 {
@@ -66,7 +65,6 @@ namespace Svelto.ECS.Example.Survive.HUD
                 yield return null;
             }
         }
-
 
         private int _enemyCount;
         private IEnumerator _tick;
