@@ -3,7 +3,7 @@ using Svelto.ECS.Example.Survive.Enemies;
 
 namespace Svelto.ECS.Example.Survive.HUD
 {
-    public class UpdateEnemyWaveHUDEngine : IQueryingEntitiesEngine, IStepEngine, IReactOnAddAndRemoveEx<EnemyComponent>
+    public class UpdateEnemyUIEngine : IQueryingEntitiesEngine, IStepEngine, IReactOnAddAndRemoveEx<EnemyComponent>
     {
         private const int SECONDS_BETWEEN_WAVES = 2;
         

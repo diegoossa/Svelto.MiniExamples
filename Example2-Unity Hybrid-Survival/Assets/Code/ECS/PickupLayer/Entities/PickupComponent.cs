@@ -2,6 +2,6 @@
 {
     public struct PickupComponent: IEntityComponent
     {
-        
+        public int ammo;
     }
 }

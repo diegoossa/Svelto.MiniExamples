@@ -74,13 +74,17 @@ namespace Svelto.ECS.Example.Survive.Player.Gun
                 for (int i = count - 1; i >= 0; i--)
                 {
                     weapons[i].timer += _time.deltaTime;
+                    Debug.Log($"CURRENT AMMO = {weapons[i].currentAmmo}");
 
-                    if (weapons[i].fired && weapons[i].timer >= weapons[i].timeBetweenBullets)
+                    if (weapons[i].fired && weapons[i].timer >= weapons[i].timeBetweenBullets && weapons[i].currentAmmo > 0)
                     {
                         weapons[i].timer = 0;
                         
                         Shoot(ref weapons[i], ref gunOOPcomponent[i]);
                         gunOOPcomponent[i].effectsEnabledForTime = weapons[i].timeBetweenBullets * 0.2f;
+
+                        // Update current ammo
+                        weapons[i].currentAmmo--;
                     }
                 }
 

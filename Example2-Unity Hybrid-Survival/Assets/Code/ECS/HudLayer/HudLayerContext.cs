@@ -13,17 +13,19 @@ namespace Svelto.ECS.Example.Survive.HUD
             //hud engines
             var hudEngine = new HUDEngine();
             var scoreEngine = new UpdateScoreEngine();
-            var enemyCountEngine = new UpdateEnemyWaveHUDEngine();
+            var enemyCountEngine = new UpdateEnemyUIEngine();
+            var ammoCounterEngine = new UpdateAmmoCounterEngine();
             var restartGameOnPlayerDeath = new RestartGameOnPlayerDeathEngine();
 
             enginesRoot.AddEngine(hudEngine);
             enginesRoot.AddEngine(scoreEngine);
             enginesRoot.AddEngine(enemyCountEngine);
+            enginesRoot.AddEngine(ammoCounterEngine);
             enginesRoot.AddEngine(restartGameOnPlayerDeath);
 
             var unsortedDamageEngines = new HUDEngines(
-                new FasterList<IStepEngine>(hudEngine, scoreEngine, enemyCountEngine, restartGameOnPlayerDeath));
-            
+                new FasterList<IStepEngine>(hudEngine, scoreEngine, enemyCountEngine, ammoCounterEngine, restartGameOnPlayerDeath));
+
             orderedEngines.Add(unsortedDamageEngines);
         }
     }

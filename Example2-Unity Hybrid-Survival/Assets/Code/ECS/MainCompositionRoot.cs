@@ -125,7 +125,7 @@ namespace Svelto.ECS.Example.Survive
                 unorderedEngines, orderedEngines, new WaitForSubmissionEnumerator(entitySubmissionScheduler),
                 _enginesRoot, gameObjectResourceManager);
             HudLayerContext.Setup(orderedEngines, _enginesRoot);
-            PickupLayerContext.Setup(entityFactory, time, navMeshUtils, orderedEngines, unorderedEngines, _enginesRoot, gameObjectResourceManager);
+            PickupLayerContext.Setup(entityFactory, time, navMeshUtils, orderedEngines, unorderedEngines, _enginesRoot, gameObjectResourceManager, entityFunctions);
 
 //group engines for order of execution. Ordering and Ticking is 100% user responsibility. This is just one of the possible way to achieve the result desired
             orderedEngines.Add(new SurvivalUnsortedEnginesGroup(unorderedEngines));

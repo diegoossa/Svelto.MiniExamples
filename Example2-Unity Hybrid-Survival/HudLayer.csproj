@@ -48,6 +48,7 @@
      <Compile Include="Assets\Code\ECS\HudLayer\Entities\EnemyCounterImplementor.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\ECSGroups.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Entities\GUIComponentInterfaces.cs" />
+     <Compile Include="Assets\Code\ECS\HudLayer\Engines\UpdateAmmoCounterEngine.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Entities\DamageHUDImplementor.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\HUDEnginesNames.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\HUDAnimations.cs" />
@@ -61,7 +62,7 @@
      <Compile Include="Assets\Code\ECS\HudLayer\Engines\RestartGameOnPlayerDeathEngine.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Engines\UpdateScoreEngine.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Entities\AmmoCounterImplementor.cs" />
-     <Compile Include="Assets\Code\ECS\HudLayer\Engines\UpdateEnemyWaveHUDEngine.cs" />
+     <Compile Include="Assets\Code\ECS\HudLayer\Engines\UpdateEnemyUIEngine.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Entities\ScoreManagerImplementor.cs" />
      <Compile Include="Assets\Code\ECS\HudLayer\Entities\HealthSliderImplementor.cs" />
      <None Include="Assets\Code\ECS\HudLayer\HudLayer.asmdef" />

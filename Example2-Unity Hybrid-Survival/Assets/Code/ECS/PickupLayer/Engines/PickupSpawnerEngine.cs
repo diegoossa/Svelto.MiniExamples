@@ -7,7 +7,6 @@ namespace Svelto.ECS.Example.Survive.Pickup
 {
     public class PickupSpawnerEngine : IQueryingEntitiesEngine, IStepEngine, IReactOnRemoveEx<PickupComponent>
     {
-        const int SECONDS_BETWEEN_SPAWNS = 4;
         const int MAX_PICKUPS = 5;
 
         public PickupSpawnerEngine(PickupFactory pickupFactory, INavMeshUtils navMeshUtils)
@@ -38,7 +37,7 @@ namespace Svelto.ECS.Example.Survive.Pickup
                 _maxPickups += (int) rangeOfEntities.end - (int) rangeOfEntities.start;
         }
 
-        IEnumerator IntervaledTick()
+        private IEnumerator IntervaledTick()
         {
             var pickupsToSpawnTask = PreAllocationTask();
             while (pickupsToSpawnTask.IsCompleted == false)
@@ -48,16 +47,16 @@ namespace Svelto.ECS.Example.Survive.Pickup
             {
                 if (_maxPickups > 0)
                 {
-                    // TODO: Create Random position in the Navmesh
+                    // Pickup appears at random positions
                     var randomPosition = _navMeshUtils.RandomNavMeshPoint();
                     var task = _pickupFactory.Fetch(randomPosition);
                     while (task.GetAwaiter().IsCompleted == false)
                         yield return null;
-
                     _maxPickups--;
                 }
 
-                var waitForSecondsEnumerator = new WaitForSecondsEnumerator(SECONDS_BETWEEN_SPAWNS);
+                // Pickup appears at random times
+                var waitForSecondsEnumerator = new WaitForSecondsEnumerator(Random.Range(4,8));
                 while (waitForSecondsEnumerator.MoveNext())
                     yield return null;
             }

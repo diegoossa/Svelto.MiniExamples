@@ -6,23 +6,31 @@ namespace Svelto.ECS.Example.Survive.HUD
 {
     public class AmmoCounterImplementor : MonoBehaviour, IImplementor, IAmmoCounterComponent
     {
-        public int value
+        public int currentAmmo
         {
             set
             {
                 _ammoCount = value;
-                _text.text = $"AMMO: {_ammoCount}";
+                _text.text = $"AMMO: {_ammoCount} / {_maxAmmo}";
             }
         }
-        
+
+        public int maxAmmo
+        {
+            set
+            {
+                _maxAmmo = value;
+                _text.text = $"AMMO: {_ammoCount} / {_maxAmmo}";
+            }
+        }
+
         private void Awake()
         {
             // Set up the reference.
             _text = GetComponent<Text>();
-            // Reset the ammo count.
-            _ammoCount = 0;
         }
 
+        private int _maxAmmo;
         private int _ammoCount;
         private Text _text;
     }

@@ -32,6 +32,7 @@ namespace Svelto.ECS.Example.Survive.HUD
     
     public interface IAmmoCounterComponent
     {
-        int value { set; }
+        int currentAmmo { set; }
+        int maxAmmo { set; }
     }
 }

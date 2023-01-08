@@ -77,7 +77,7 @@ namespace Svelto.ECS.Example.Survive.Player
                 });
         }
 
-        void BuildGunEntity(EntityInitializer playerInitializer, ValueIndex valueIndex)
+        private void BuildGunEntity(EntityInitializer playerInitializer, ValueIndex valueIndex)
         {
             //Gun and player are two different entities, but they are linked by the EGID
             //in this case we assume that we know at all the time the ID of the gun and the group where the gun is
@@ -97,7 +97,10 @@ namespace Svelto.ECS.Example.Survive.Player
                         timeBetweenBullets = 0.3f,
                         range = 100f,
                         damagePerShot = 20,
-                        timer = 0.3f
+                        timer = 0.3f,
+                        // TODO: Check different initial values for ammo
+                        maxAmmo = 50,
+                        currentAmmo = 10
                 });
 
             var gunObject = _gameObjectResourceManager[valueIndex].GetComponentInChildren<PlayerShootingFX>()
@@ -121,9 +124,10 @@ namespace Svelto.ECS.Example.Survive.Player
         /// <summary>
         /// This demo has just one camera, but it would be simple to create a camera for each player for a split
         /// screen scenario. 
+        /// </summary>
         /// <param name="playerID"></param>
-        /// <param name="gameObject"></param>
-        void BuildCameraEntity(ref EntityInitializer playerID, ValueIndex cameraID)
+        /// <param name="cameraID"></param>
+        private void BuildCameraEntity(ref EntityInitializer playerID, ValueIndex cameraID)
         {
             var cameraResource = _gameObjectResourceManager[cameraID];
             var playerPosition = playerID.Get<PositionComponent>();

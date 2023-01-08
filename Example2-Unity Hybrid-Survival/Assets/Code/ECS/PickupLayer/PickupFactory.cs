@@ -29,6 +29,11 @@ namespace Svelto.ECS.Example.Survive.Pickup
                 entityReferenceHolder.reference = initializer.reference.ToULong();
 
                 initializer.Init(
+                    new PickupComponent
+                    {
+                        ammo = 20
+                    });
+                initializer.Init(
                     new GameObjectEntityComponent
                     {
                         resourceIndex = valueIndex,

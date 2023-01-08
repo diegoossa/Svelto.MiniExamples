@@ -5,11 +5,11 @@ namespace Svelto.ECS.Example.Survive.Pickup
 {
     public static class PickupLayerContext
     {
-        public static void Setup(IEntityFactory entityFactory, ITime time, INavMeshUtils navMeshUtils, FasterList<IStepEngine> orderedEngines, FasterList<IStepEngine> unorderedEngines, EnginesRoot enginesRoot, GameObjectResourceManager gameObjectResourceManager)
+        public static void Setup(IEntityFactory entityFactory, ITime time, INavMeshUtils navMeshUtils, FasterList<IStepEngine> orderedEngines, FasterList<IStepEngine> unorderedEngines, EnginesRoot enginesRoot, GameObjectResourceManager gameObjectResourceManager, IEntityFunctions entityFunctions)
         {
             var pickupFactory = new PickupFactory(entityFactory, gameObjectResourceManager);
             
-            var collectPickupEngine = new CollectPickupEngine();
+            var collectPickupEngine = new CollectPickupEngine(entityFunctions, gameObjectResourceManager);
             var rotatePickupEngine = new RotatePickupEngine(time);
             var pickupSpawnerEngine = new PickupSpawnerEngine(pickupFactory, navMeshUtils);
 

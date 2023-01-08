@@ -12,15 +12,14 @@ namespace Svelto.ECS.Example.Survive.OOPLayer
                 var randomPoint = Random.insideUnitSphere * 17f;
                 if (NavMesh.SamplePosition(randomPoint, out var hit, 2f, NavMesh.AllAreas))
                 {
-                    Debug.Log($"RANDOM POINT IN THE NAVMESH {hit.position} // {i}");
                     var targetPosition = hit.position;
                     targetPosition.y = 0.5f;
                     return targetPosition;
                 }
-            }
-
-            Debug.Log($"NO HIT");
-            return new Vector3(Random.Range(-2f, 2f), 0.5f, Random.Range(-2f, 2f));
+            } 
+            
+            // if we didn't find the point after the 30 iterations, we just pass a random position
+            return new Vector3(Random.Range(-15f, 15f), 0.5f, Random.Range(-15f, 15f));
         }
     }
 }
