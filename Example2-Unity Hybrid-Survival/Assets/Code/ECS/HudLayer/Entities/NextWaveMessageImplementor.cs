@@ -5,28 +5,17 @@ namespace Svelto.ECS.Example.Survive.HUD
 {
     public class NextWaveMessageImplementor : MonoBehaviour, IImplementor, INextWaveMessageComponent
     {
-        public bool visible
+        public AnimationState animationState
         {
-            set
-            {
-                // TODO: Animate message
-                if (value)
-                {
-                    _canvasGroup.alpha = 1;
-                }
-                else
-                {
-                    _canvasGroup.alpha = 0;
-                }
-            }
+            set => _animator.SetBool(HUDAnimations.NextWave, true);
         }
 
         private void Awake()
         {
-            // Set up the reference to the Canvas group
-            _canvasGroup = GetComponent<CanvasGroup>();
+            _animator = transform.parent.GetComponent<Animator>();
+
         }
 
-        private CanvasGroup _canvasGroup;
+        private Animator _animator;
     }
 }

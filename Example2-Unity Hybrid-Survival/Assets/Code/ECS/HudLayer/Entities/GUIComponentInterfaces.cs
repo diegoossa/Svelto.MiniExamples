@@ -27,7 +27,7 @@ namespace Svelto.ECS.Example.Survive.HUD
     
     public interface INextWaveMessageComponent
     {
-        bool visible { set; }
+        AnimationState animationState { set; }
     }
     
     public interface IAmmoCounterComponent

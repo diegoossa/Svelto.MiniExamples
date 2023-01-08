@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Svelto.Common;
 using Svelto.ECS.Example.Survive.OOPLayer;
@@ -23,8 +24,8 @@ namespace Svelto.ECS.Example.Survive.Pickup
 
         public void Step()
         {
-            foreach (var ((pickup, collision, vfx, position, entityIDs, count), currentGroup) in entitiesDB
-                         .QueryEntities<PickupComponent, CollisionComponent, VFXComponent, PositionComponent>(
+            foreach (var ((pickup, collision, entityIDs, count), currentGroup) in entitiesDB
+                         .QueryEntities<PickupComponent, CollisionComponent>(
                              Pickup.Groups))
             {
                 for (var i = 0; i < count; i++)
@@ -39,12 +40,8 @@ namespace Svelto.ECS.Example.Survive.Pickup
                             if (entitiesDB.Exists<WeaponComponent>(otherEntityID))
                             {
                                 var weaponComponent = entitiesDB.QueryEntity<WeaponComponent>(otherEntityID);
-                                ref var gunComponent =
-                                    ref entitiesDB.QueryEntity<GunComponent>(
-                                        weaponComponent.weapon.ToEGID(entitiesDB));
-                                gunComponent.currentAmmo += pickup[i].ammo;
-
-                                vfx[i].vfxEvent = new VFXEvent(position[i].position);
+                                ref var gunComponent = ref entitiesDB.QueryEntity<GunComponent>(weaponComponent.weapon.ToEGID(entitiesDB));
+                                gunComponent.currentAmmo = Math.Min(gunComponent.currentAmmo + pickup[i].ammo, gunComponent.maxAmmo);
 
                                 // Remove Pickup Entity
                                 _entityFunctions.RemoveEntity<PickupEntityDescriptor>(entityIDs[i], currentGroup);

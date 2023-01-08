@@ -35,6 +35,9 @@ namespace Svelto.ECS.Example.Survive.HUD
             if (groupID.FoundIn(EnemyDeadGroup.Groups))
             {
                 _enemyCount -= (int) rangeOfEntities.end - (int) rangeOfEntities.start;
+                
+                if (_enemyCount == 0)
+                    _execute = true;
             }
         }
 
@@ -50,23 +53,24 @@ namespace Svelto.ECS.Example.Survive.HUD
                 hudEntityView.enemyCounterComponent.enemyCount = _enemyCount;
 
                 // Prepare Next Wave
-                if (_enemyCount == 0)
+                if (_execute)
                 {
                     // Show Next Wave Message
-                    hudEntityView.nextWaveMessageComponent.visible = true;
-                    
+                    hudEntityView.nextWaveMessageComponent.animationState = new AnimationState(HUDAnimations.NextWave);
+
                     var waitForSecondsEnumerator = new WaitForSecondsEnumerator(SECONDS_BETWEEN_WAVES);
                     while (waitForSecondsEnumerator.MoveNext())
                         yield return null;
-                    
-                    // Hide Next Wave Message
-                    hudEntityView.nextWaveMessageComponent.visible = false;
+
+                    _execute = false;
                 }
+                
                 yield return null;
             }
         }
 
         private int _enemyCount;
+        private bool _execute;
         private IEnumerator _tick;
     }
 }
